@@ -4,7 +4,7 @@
 
 ├── README.md                # Este arquivo
 
-# Knapsack Problem in Python
+- Knapsack Problem in Python
 
 Este repositório apresenta duas abordagens para resolver o clássico **Problema da Mochila 0–1**:
 
@@ -13,7 +13,7 @@ Este repositório apresenta duas abordagens para resolver o clássico **Problema
 
 ---
 
-# Descrição do Problema
+- Descrição do Problema
 
 Dado um conjunto de itens, cada um com um valor `p[i]` e um peso `w[i]`, e uma capacidade máxima da mochila `c`, o objetivo é selecionar um subconjunto de itens que maximize o valor total sem ultrapassar a capacidade.
 
