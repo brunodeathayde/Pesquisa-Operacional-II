@@ -1,5 +1,7 @@
 ├── dantzig_heuristic.py     # Implementação da heurística gulosa
+
 ├── mip_model.py             # Modelo exato com Python MIP
+
 ├── README.md                # Este arquivo
 
 # Knapsack Problem in Python
