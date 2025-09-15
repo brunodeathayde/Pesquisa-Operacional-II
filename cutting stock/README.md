@@ -17,7 +17,7 @@ Restrições:
 
     A soma dos cortes deve atender ou exceder a demanda de cada item.
 
-📐 Parâmetros do Modelo
+Uma instância para o problema
 
     Largura do rolo padrão: L = 12.0
 
@@ -28,13 +28,3 @@ Restrições:
     Custos unitários por padrão: c = [1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     Padrões de corte: matriz a com combinações viáveis de cortes
-
-🛠️ Implementação
-
-O modelo é construído com as seguintes etapas:
-
-    Definição das variáveis inteiras para representar quantas vezes cada padrão será utilizado.
-
-    Formulação da função objetivo para minimizar o número total de rolos.
-
-    Inclusão das restrições para garantir que a demanda de cada item seja atendida.
