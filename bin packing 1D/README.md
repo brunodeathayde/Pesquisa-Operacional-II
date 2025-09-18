@@ -1,9 +1,15 @@
 ├── bin1D.py                # Modelo exato com programação inteira (Python MIP)
+
 ├── next_fit.py             # Heurística Next Fit
+
 ├── first_fit.py            # Heurística First Fit
+
 ├── best_fit.py             # Heurística Best Fit
+
 ├── first_fit_decreasing.py # Heurística First Fit com ordenação decrescente
+
 ├── best_fit_decreasing.py  # Heurística Best Fit com ordenação decrescente
+
 ├── README.md               # Este arquivo
 
 🧩 Descrição do Problema
