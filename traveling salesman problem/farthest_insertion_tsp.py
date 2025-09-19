@@ -1,11 +1,12 @@
 import numpy as np
+from route_distance import route_distance
 
 def farthest_insertion_tsp(n, D):
     # Passo 1: encontra os dois nós mais distantes
     max_dist = -1
     i0, j0 = 0, 1
     for i in range(n):
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             if D[i][j] > max_dist:
                 max_dist = D[i][j]
                 i0, j0 = i, j
@@ -33,4 +34,7 @@ def farthest_insertion_tsp(n, D):
         route.insert(best_pos, farthest_node)
         unvisited.remove(farthest_node)
 
-    return route
+    # calcula a distância total
+    total_dist = route_distance(route, D)
+
+    return route, total_dist
