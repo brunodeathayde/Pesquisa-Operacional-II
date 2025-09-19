@@ -1,6 +1,7 @@
 import numpy as np
+from route_distance import route_distance
 
-def nearest_neighbor_tsp(n,D):
+def nearest_neighbor_tsp(n, D):
     unvisited = list(range(n))
     
     # ponto inicial aleatório
@@ -16,6 +17,7 @@ def nearest_neighbor_tsp(n,D):
         unvisited.remove(next_node)
         current = next_node
     
-    return route
-
-
+    # calcula a distância total
+    total_dist = route_distance(route, D)
+    
+    return route, total_dist
