@@ -30,7 +30,6 @@ for i, bin in enumerate(resultado):
 ax.set_yticks(range(len(resultado)))
 ax.set_yticklabels([f"Bin {i+1}" for i in range(len(resultado))])
 ax.set_xlabel("Capacidade ocupada")
-ax.set_title("Alocação de Itens nos Bins (FFD)")
 ax.set_xlim(0, capacidade)
 plt.tight_layout()
 plt.show()
