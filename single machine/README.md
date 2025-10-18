@@ -1,1 +1,10 @@
-.
+🛠️ Single Machine Scheduling – Pesquisa Operacional II
+Este repositório contém implementações de algoritmos para o problema de escalonamento em máquina única, utilizando heurísticas e modelos de programação inteira.
+
+📁 Arquivos
+Arquivo	Descrição
+earliest_due_date.py	Função que implementa a heurística Earliest Due Date (EDD).
+main_single_machine.py	Script principal que aplica a heurística EDD e gera o gráfico de Gantt.
+milp_1_positional.py	Modelo MILP com variáveis posicionais para escalonamento em máquina única.
+milp_2_manne.py	Modelo MILP baseado na formulação de Manne.
+test_single.txt	Arquivo de entrada com tempos de processamento e datas de entrega.
