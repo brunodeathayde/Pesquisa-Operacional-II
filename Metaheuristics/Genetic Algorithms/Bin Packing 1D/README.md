@@ -21,6 +21,35 @@ Este projeto implementa um algoritmo genético para o problema de Bin Packing un
 | `mutation(prob_mut, offspring, l, L, n_bins)` | Aplica mutação tentando realocar um item para outro bin viável.           |
 | `replacement(pop, fitness, offspring, fitness_off)` | Substitui o pior indivíduo da população se o filho for melhor.           |
 
+## 🧮 Função Objetivo: Perda Quadrática Média
+
+A função de fitness utilizada busca minimizar o desbalanceamento entre os bins utilizados. A equação é:
+
+
+
+\[
+\text{Fitness} = \frac{1}{|B|} \sum_{b \in B} (L - C_b)^2
+\]
+
+
+
+Onde:
+
+- \( B \): conjunto de bins utilizados (aqueles com pelo menos um item)
+- \( L \): capacidade máxima de cada bin
+- \( C_b \): carga total do bin \( b \)
+- \( (L - C_b)^2 \): penalidade quadrática para o desvio da carga ideal
+
+Essa métrica favorece soluções onde os bins estão igualmente preenchidos, evitando tanto bins muito cheios quanto muito vazios.
+
+## ⚠️ Por que não minimizar apenas o número de bins?
+
+Minimizar apenas o número de bins utilizados não é uma boa função de fitness para algoritmos genéticos, pois:
+
+- Muitos indivíduos diferentes podem usar o mesmo número de bins, tornando-os indistinguíveis para o algoritmo.
+- Isso prejudica a seleção natural e a convergência, pois não há gradiente de qualidade entre soluções.
+- A perda quadrática média fornece uma métrica contínua e diferenciável, ideal para orientar a evolução genética.
+
 ## 📌 Parâmetros do Problema
 
 - `l`: lista de tamanhos dos itens
