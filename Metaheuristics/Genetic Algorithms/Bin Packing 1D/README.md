@@ -23,6 +23,7 @@ Este projeto implementa um algoritmo genético para o problema de Bin Packing un
 
 ## 🧮 Função Objetivo: Perda Quadrática Média
 
+
 A função de fitness utilizada busca minimizar o desbalanceamento entre os bins utilizados. A equação é:
 
 
@@ -41,6 +42,7 @@ Onde:
 - \( (L - C_b)^2 \): penalidade quadrática para o desvio da carga ideal
 
 Essa métrica favorece soluções onde os bins estão igualmente preenchidos, evitando tanto bins muito cheios quanto muito vazios.
+
 
 ## ⚠️ Por que não minimizar apenas o número de bins?
 
