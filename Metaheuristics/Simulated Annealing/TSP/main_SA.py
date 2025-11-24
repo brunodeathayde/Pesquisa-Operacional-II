@@ -62,7 +62,7 @@ while num_iter < max_iter:
 # refinamento final com two-opt
 s_best, f_best = two_opt_best_improvement(n, s_best, f_best, D)
 
-print("Best solution: {:.2f}".format(f_best))
+print("Best solution: {:.2f}".format(abs(f_best)))
 
 # Plotar o gráfico com a evolução do fitness
 plt.figure(figsize=(8,5))
