@@ -1,7 +1,7 @@
-# 🐝 Simulated Annealing for TSP
+## 🔥🌡️ Simulated Annealing para o Problema do Caixeiro Viajante
 
 Este repositório contém uma implementação do **Simulated Annealing (SA)** aplicada ao **Problema do Caixeiro Viajante (TSP)**.  
-O algoritmo busca minimizar a distância total percorrida, explorando vizinhos com probabilidade controlada pela temperatura e refinando a solução com heurísticas locais.
+O algoritmo busca minimizar a distância total percorrida, explorando vizinhos com probabilidade controlada pela temperatura e refinando a solução com heurísticas locais. O algoritmo utiliza uma temperatura inicial 🌡️ que vai sendo reduzida 🔥❄️ ao longo das iterações.
 
 ---
 
@@ -20,5 +20,3 @@ O algoritmo busca minimizar a distância total percorrida, explorando vizinhos c
 - `two_opt_best_improvement.py` → Implementação da heurística 2‑opt (best improvement).
 
 ---
-
-
