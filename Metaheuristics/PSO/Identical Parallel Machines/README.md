@@ -1,4 +1,4 @@
-# PSO Scheduling Toolkit
+# PSO para o Problema de Máquinas Paralelas Idênticas
 
 Este repositório contém uma implementação de **Particle Swarm Optimization (PSO)** aplicada a problemas de sequenciamento, utilizando a biblioteca [scheptk](https://github.com/framinan/scheptk).
 
