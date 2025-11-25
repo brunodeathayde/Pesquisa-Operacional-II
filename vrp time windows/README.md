@@ -28,3 +28,21 @@ A função principal é:
 
 ```python
 def route_cost_open(route, P, capacity, deposito, destino_final, tempo_servico=0)
+
+## 📌 Parâmetros
+
+```python
+route: lista de índices dos clientes na ordem de atendimento.
+
+P: lista de pontos, onde cada ponto é definido como 
+   [x, y, demanda, inicio_janela, fim_janela].
+
+capacity: capacidade máxima do veículo.
+
+deposito: tupla (x_dep, y_dep) com coordenadas do depósito.
+
+destino_final: tupla (x_dest, y_dest) com coordenadas do cliente final 
+               (onde a rota termina).
+
+tempo_servico (opcional): tempo de atendimento em cada cliente (default = 0).
+
