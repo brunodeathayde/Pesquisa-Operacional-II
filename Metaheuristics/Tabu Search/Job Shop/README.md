@@ -16,4 +16,4 @@ O objetivo é minimizar o **makespan** (tempo total de conclusão) através da e
 
 ## 📈 Gráfico de Gantt - Makespan
 
-![Makespan](images/Makespan.png)
+![Makespan](Makespan.png)
