@@ -15,9 +15,9 @@ O objetivo é encontrar rotas para uma frota de veículos que atendam clientes e
 
 ---
 
-# Open Vehicle Routing Problem (OVRP) – Python Implementation
+# Open Vehicle Routing Problem with Time Windows (OVRPTW) 
 
-Este repositório inclui uma implementação simples em Python para cálculo de rotas no **Open Vehicle Routing Problem (OVRP)** com janelas de tempo. 
+Este repositório inclui uma implementação simples em Python para cálculo de rotas no **Open Vehicle Routing Problem** com janelas de tempo. 
 Diferente do VRP clássico, no OVRP os veículos **não retornam ao depósito** após atender os clientes: cada rota começa no depósito e termina em um cliente final.
 
 ---
