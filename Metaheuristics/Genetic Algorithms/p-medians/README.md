@@ -1,4 +1,4 @@
-# 📌 Algoritmo Genético para o Problema de *p*-Medianas
+# 📌 Algoritmo Genético para o Problema de *p*-medianas
 
 Este repositório contém uma implementação de um **Algoritmo Genético (GA)** para resolver o problema das ***p*-medianas**, um problema clássico de otimização combinatória em Pesquisa Operacional.
 
