@@ -73,6 +73,7 @@ for k in range(m):
             u, v = random.sample(nodes, 2)
             w = random.randint(1, 20)
             f.write(f"U,{u},{v},{w}\n")
+```
 
 ## 📊 Visualização da Solução
 
