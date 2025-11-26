@@ -53,20 +53,18 @@ def uniform_crossover_pmedian(n_points, pop, parent1, parent2, p):
         gene = pop[parent1][j] if random.randint(0, 1) == 0 else pop[parent2][j]
         offspring[j] = gene
     
-    # Passo 2: identificar medianas usadas
-    medianas_usadas = set(offspring)
+    # Passo 2: identificar medianas usadas (como lista)
+    medianas_usadas = list(set(offspring))
     
     # Passo 3: ajustar para manter exatamente p medianas
     if len(medianas_usadas) > p:
         # reduzir aleatoriamente
-        medianas_usadas = set(random.sample(medianas_usadas, p))
+        medianas_usadas = random.sample(medianas_usadas, p)
     elif len(medianas_usadas) < p:
         # adicionar medianas aleatórias
-        candidatos = set(range(n_points)) - medianas_usadas
+        candidatos = list(set(range(n_points)) - set(medianas_usadas))
         adicionais = random.sample(candidatos, p - len(medianas_usadas))
-        medianas_usadas.update(adicionais)
-    
-    medianas_usadas = list(medianas_usadas)
+        medianas_usadas.extend(adicionais)
     
     # Passo 4: reatribuir clientes às medianas válidas
     for j in range(n_points):
@@ -156,10 +154,3 @@ def plot_best_solution(coords, best_solution):
     plt.ylabel("Y")
     plt.grid(True)
     plt.show()
-
-
-
-
-
-
-
