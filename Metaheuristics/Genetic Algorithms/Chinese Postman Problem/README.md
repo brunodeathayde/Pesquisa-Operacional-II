@@ -29,6 +29,13 @@ O projeto inclui geração de instâncias, leitura de arquivos, operadores gené
 O arquivo `cpp_generation.py` gera instâncias aleatórias do CPP.  
 Exemplo simplificado:
 
+
+- `tipo`: `D` (direcionado) ou `U` (não direcionado)  
+- `u,v`: nós da aresta/arco  
+- `peso`: custo associado  
+
+Exemplo de geração:
+
 ```python
 import random
 
