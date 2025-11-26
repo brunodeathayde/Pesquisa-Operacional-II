@@ -24,6 +24,20 @@ O projeto inclui geração de instâncias, leitura de arquivos, operadores gené
 
 ---
 
+## ⚙️ Operadores e Funções
+
+| Função                                | Descrição                                                                 |
+|---------------------------------------|---------------------------------------------------------------------------|
+| `genpop(pop_size, n_nodes)`           | Gera população inicial de permutações de nós.                             |
+| `fitness_population(pop, G)`          | Calcula o custo total de cada indivíduo da população.                      |
+| `selection(pop_size, fitness)`        | Seleção por torneio (escolhe dois pais com base no fitness).               |
+| `order_crossover(parent1, parent2)`   | Crossover OX (Order Crossover), preserva segmento do pai1 e completa com pai2. |
+| `mutation_swap(prob_mut, offspring)`  | Mutação por troca (swap) de dois genes com probabilidade `prob_mut`.       |
+| `fitness_offspring(individuo, G)`     | Avalia o custo de um único indivíduo (offspring).                          |
+| `replacement(pop, fitness, offspring, fitness_off)` | Substitui o pior indivíduo se o filho for melhor. |
+| `plot_solution(G, permutation)`       | Visualiza graficamente o grafo e destaca a rota da permutação.             |
+
+
 ## 🛠️ Gerador de Instâncias
 
 O arquivo `cpp_generation.py` gera instâncias aleatórias do CPP.  
