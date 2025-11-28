@@ -1,6 +1,6 @@
 # GRASP para o Open Vehicle Routing Problem (OVRP)
 
-Este repositório implementa uma metaheurística **GRASP (Greedy Randomized Adaptive Search Procedure)** para resolver o **Open Vehicle Routing Problem (OVRP)**.  
+Este repositório implementa uma metaheurística **GRASP (*Greedy Randomized Adaptive Search Procedures*)** para resolver o *Open Vehicle Routing Problem* (OVRP).  
 
 No OVRP, os veículos partem de um **depósito**, visitam um conjunto de **clientes** e finalizam suas rotas em um **ponto de entrega**. O objetivo é minimizar o custo total das rotas, respeitando a capacidade dos veículos.
 
