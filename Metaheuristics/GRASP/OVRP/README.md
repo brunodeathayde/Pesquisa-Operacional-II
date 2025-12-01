@@ -46,3 +46,47 @@ Exemplo de saída gráfica:
 
 ![Rotas geradas](routes.png)
 
+# 🚚 Interface OVRP - Tkinter
+
+Este projeto implementa uma **interface gráfica em Python** para resolver o **Open Vehicle Routing Problem (OVRP)** utilizando o algoritmo **GRASP** com operadores de melhoria (Reallocation, Swap e 2-opt).  
+A interface foi construída com **Tkinter** e integra visualização de rotas com **Matplotlib**.
+
+---
+
+## ✨ Funcionalidades
+
+- 📂 **Carregar instância** de problema a partir de arquivo `.txt`
+- ⚙️ **Configurar parâmetros** do algoritmo:
+  - `Alpha` (parâmetro de aleatoriedade da fase de construção)
+  - `Max Iter` (número máximo de iterações)
+- 🧮 **Executar algoritmo GRASP** com heurísticas de melhoria:
+  - Reallocation
+  - Swap
+  - 2-opt
+- 📊 **Visualização gráfica das rotas** em tempo real
+- 📑 **Tabela da instância** mostrando depósito, entrega e clientes
+- 📝 **Listagem textual das rotas** encontradas
+- 📏 **Cálculo da distância total** da solução
+
+---
+
+## 🖼️ Estrutura da Interface
+
+A interface é dividida em três áreas principais:
+
+1. **Painel de parâmetros**  
+   - Entrada de valores para `Alpha` e `Max Iter`  
+   - Botões para abrir instância e rodar algoritmo  
+
+2. **Tabela da instância (lado esquerdo)**  
+   - Exibe depósito, ponto de entrega e clientes com coordenadas e demanda  
+
+3. **Painel de rotas (lado direito)**  
+   - Gráfico das rotas geradas  
+   - Texto listando clientes em cada rota  
+   - Distância total da solução  
+
+---
+
+![Rotas geradas](interface.png)
+
