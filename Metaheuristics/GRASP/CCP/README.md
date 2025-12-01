@@ -37,5 +37,5 @@ O CCP consiste em atribuir clientes a clusters de forma que:
 | **Troca (Swap)** (`swap_ccp`) | Troca dois clientes entre clusters diferentes se a capacidade permitir. | Explorar vizinhança e reduzir custo localmente. |
 | **Plotagem** (`plot_clusters_assignment`) | Gera gráfico com clusters (quadrados) e clientes (círculos), mostrando conexões. | Visualizar a atribuição final dos clientes aos clusters. |
 
-## 🖼️ Figura 1 – Atribuição dos clientes aos clusters
+## 🖼️ Figura 1 – Exemplo de atribuição dos clientes aos clusters
 ![Solução GRASP CCP](Figure_1.png)
