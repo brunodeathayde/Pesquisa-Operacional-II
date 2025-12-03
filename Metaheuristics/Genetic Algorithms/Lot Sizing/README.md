@@ -63,9 +63,3 @@ O objetivo é minimizar o custo total de produção, estoque e setup, garantindo
 A figura abaixo mostra uma solução de *lot sizing* obtida pelo algoritmo genético, com a produção de cada item em cada período representada em barras empilhadas:
 
 ![Exemplo de um solução para o Lot Sizing](Figure_1.png)
-
-
-Para rodar o algoritmo:
-
-```bash
-python main.py
