@@ -37,8 +37,8 @@ O objetivo é minimizar o custo total de produção, estoque e setup, garantindo
 4. **Selecionar pais** com base no fitness  
 5. **Aplicar crossover e mutação** para gerar filhos  
 6. **Avaliar fitness dos filhos**  
-7. ** *Replacement* **: substituir indivíduos da população  
-8. ** *Restart* (opcional)**: reinicializar população se houver estagnação  
+7. ***Replacement* **: substituir indivíduos da população  
+8. ***Restart* (opcional)**: reinicializar população se houver estagnação  
 9. **Plotar evolução do fitness** e visualizar solução final  
 
 ---
