@@ -27,6 +27,9 @@ O objetivo é minimizar o custo total de movimentação considerando distâncias
 - **`Figure_1.png`**  
   Exemplo de solução gerada pelo algoritmo, mostrando o layout final.
 
+![Solução do Layout](Figure_1.png)
+
+
 ---
 
 ## ⚙️ Fluxo do Algoritmo
