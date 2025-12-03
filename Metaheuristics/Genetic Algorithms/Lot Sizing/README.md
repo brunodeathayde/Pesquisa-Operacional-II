@@ -1,6 +1,6 @@
 # Algoritmo Genético para o *Lot Sizing*
 
-Este projeto implementa um **Algoritmo Genético (GA)** para resolver o problema de ** *Lot Sizing* com múltiplos itens e múltiplos períodos**.  
+Este projeto implementa um **Algoritmo Genético (GA)** para resolver o problema de ***Lot Sizing* com múltiplos itens e múltiplos períodos**.  
 O objetivo é minimizar o custo total de produção, estoque e setup, garantindo que a demanda seja atendida ou penalizando quando não for.
 
 ---
