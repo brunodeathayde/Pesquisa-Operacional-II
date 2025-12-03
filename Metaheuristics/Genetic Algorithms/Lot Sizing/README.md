@@ -58,8 +58,12 @@ O objetivo é minimizar o custo total de produção, estoque e setup, garantindo
 | `plot_lotsizing_solution` | Visualização | Plota gráfico de barras empilhadas mostrando produção por item em cada período. |
 
 ---
+## 📊 Exemplo de Solução
 
-## 🚀 Execução
+A figura abaixo mostra uma solução de lot sizing obtida pelo algoritmo genético, com a produção de cada item em cada período representada em barras empilhadas:
+
+![Exemplo de um solução para o Lot Sizing](Figure_1.png)
+
 
 Para rodar o algoritmo:
 
