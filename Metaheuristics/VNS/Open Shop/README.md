@@ -31,4 +31,8 @@ Essas vizinhanças permitem explorar diferentes regiões do espaço de soluçõe
 
 ---
 
+## 🎨 Visualização
 
+Exemplo de saída gráfica:
+
+![Scheduling](Makespan.png)
