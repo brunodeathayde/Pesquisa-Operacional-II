@@ -47,7 +47,7 @@ O método combina heurísticas clássicas (EDD, NEH), operadores de destruição
 
 ---
 
-## 📈 Evolução do Tardiness
+## 📈 Gráfico de Gantt
 
 A figura abaixo mostra o diagrama de Gantt para uma solução gerada:
 
