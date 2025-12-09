@@ -47,4 +47,9 @@ O método combina heurísticas clássicas (EDD, NEH), operadores de destruição
 
 ---
 
+## 📈 Evolução do Tardiness
+
+A figura abaixo mostra o diagrama de Gantt para uma solução gerada:
+
+![Tardiness](Tardiness.png)
 
