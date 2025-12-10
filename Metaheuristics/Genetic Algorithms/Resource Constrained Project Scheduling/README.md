@@ -91,7 +91,7 @@ O arquivo principal (`rcpsp.py`) contém:
 
 # Operador de Cruzamento PPC (Precedence Preserving Crossover)
 
-Este documento descreve em detalhes o operador de cruzamento **PPC (Precedence Preserving Crossover)** implementado para o problema **RCPSP (Resource-Constrained Project Scheduling Problem)**.
+É descrito em detalhes o operador de cruzamento **PPC (Precedence Preserving Crossover)** implementado para o problema **RCPSP (Resource-Constrained Project Scheduling Problem)**.
 
 ---
 
