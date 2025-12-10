@@ -358,20 +358,9 @@ def evolutionary_algorithm_rcpsp(file_name, pop_size=50, generations=100, prob_m
         parent1_idx, parent2_idx = selection(pop_size, fitness)
         parent1 = pop[parent1_idx]
         parent2 = pop[parent2_idx]
-        
-        # Crossover
-        if random.random() > 0.5:
-            offspring = ppc_crossover(parent1, parent2, activities)
-        else:
-            offspring = order_crossover(parent1, parent2)
-        
-        # Mutação
+        offspring = ppc_crossover(parent1, parent2, activities)
         offspring = mutation_swap(prob_mut, offspring, activities)
-        
-        # Fitness do filho
         fitness_off = fitness_offspring(offspring, activities, resource_capacities)
-        
-        # Substituição
         pop, fitness = replacement(pop, fitness, offspring, fitness_off, activities, resource_capacities)
         
         if gen % 10 == 0:
