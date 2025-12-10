@@ -3,6 +3,7 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# Leitura da instância
 def read_instance_rcpsp(file_name):
     """
     Lê uma instância RCPSP em formato texto.
@@ -44,7 +45,7 @@ def read_instance_rcpsp(file_name):
 
     return n_activities, n_resources, resource_capacities, activities
 
-
+# Geração da população inicial de forma aletatória
 def genpop_rcpsp(pop_size, activities):
     """
     Gera população inicial para RCPSP.
@@ -75,12 +76,8 @@ def genpop_rcpsp(pop_size, activities):
 
     return np.array(pop, dtype=object)  # dtype=object para arrays de diferentes tamanhos
 
-
+# Gera o cronograma a partir de uma lista de atividades. Retorna o makespan.
 def schedule_generation(individuo, activities, resource_capacities):
-    """
-    Gera o cronograma a partir de uma lista de atividades.
-    Retorna o makespan.
-    """
     n_resources = len(resource_capacities)
 
     # Linha do tempo de uso dos recursos (vai crescendo conforme necessário)
@@ -131,12 +128,8 @@ def schedule_generation(individuo, activities, resource_capacities):
     makespan = max(schedule[a]["end"] for a in schedule)
     return makespan
 
-
+# Calcula a aptidão da população
 def fitness_population(pop, activities, resource_capacities):
-    """
-    Avalia o fitness da população para RCPSP.
-    Fitness = makespan (quanto menor, melhor).
-    """
     fitness = []
     for individuo in pop:
         try:
@@ -146,23 +139,15 @@ def fitness_population(pop, activities, resource_capacities):
             fitness.append(float("inf"))  # solução inválida
     return np.array(fitness)
 
-
+# Operador de seleção por torneio binário
 def selection(pop_size, fitness):
-    """
-    Seleção por torneio.
-    Retorna os índices dos dois pais selecionados.
-    """
     candidates = np.random.permutation(pop_size)[:4]
     parent1 = candidates[0] if fitness[candidates[0]] < fitness[candidates[1]] else candidates[1]
     parent2 = candidates[2] if fitness[candidates[2]] < fitness[candidates[3]] else candidates[3]
     return parent1, parent2
 
-
+# Precedence Preserving Crossover para RCPSP. Garante que o filho respeita todas as precedências.
 def ppc_crossover(parent1, parent2, activities):
-    """
-    Precedence Preserving Crossover para RCPSP.
-    Garante que o filho respeita todas as precedências.
-    """
     n = len(parent1)
     offspring = []
     used = set()
@@ -207,30 +192,8 @@ def ppc_crossover(parent1, parent2, activities):
 
     return offspring
 
-
-def order_crossover(parent1, parent2):
-    """
-    Cruzamento OX (Order Crossover).
-    """
-    n = len(parent1)    
-    cut1, cut2 = sorted(random.sample(range(n), 2))    
-    offspring = [None] * n    
-    offspring[cut1:cut2+1] = parent1[cut1:cut2+1]    
-    segment_set = set(parent1[cut1:cut2+1])    
-    remaining_genes = [gene for gene in parent2 if gene not in segment_set]    
-    idx = 0
-    for i in range(n):
-        pos = (cut2 + 1 + i) % n
-        if offspring[pos] is None:
-            offspring[pos] = remaining_genes[idx]
-            idx += 1    
-    return offspring
-
-
+# Mutação por swap, garantindo que a lista permaneça válida.
 def mutation_swap(prob_mut, offspring, activities):
-    """
-    Mutação por swap, garantindo que a lista permaneça válida.
-    """
     if random.random() <= prob_mut:
         n = len(offspring)
         attempts = 0
@@ -263,23 +226,16 @@ def mutation_swap(prob_mut, offspring, activities):
     
     return offspring
 
-
+# Avalia o fitness de um único indivíduo (offspring) para RCPSP.
 def fitness_offspring(individuo, activities, resource_capacities):
-    """
-    Avalia o fitness de um único indivíduo (offspring) para RCPSP.
-    Fitness = makespan (quanto menor, melhor).
-    """
     try:
         makespan = schedule_generation(individuo, activities, resource_capacities)
         return makespan
     except Exception:
         return float("inf")  # solução inválida
 
-
+#  Substitui o pior indivíduo.
 def replacement(pop, fitness, offspring, fitness_off, activities, resource_capacities):
-    """
-    Substitui o pior indivíduo.
-    """
     # Avalia fitness da população atualizada se necessário
     if len(fitness) != len(pop):
         fitness = fitness_population(pop, activities, resource_capacities)
@@ -292,11 +248,9 @@ def replacement(pop, fitness, offspring, fitness_off, activities, resource_capac
         fitness[worst_idx] = fitness_off
     
     return pop, fitness
-
+    
+#  Igual ao schedule_generation, mas retorna também o dicionário de schedule.
 def build_schedule(individuo, activities, resource_capacities):
-    """
-    Igual ao schedule_generation, mas retorna também o dicionário de schedule.
-    """
     n_resources = len(resource_capacities)
     resource_usage = []
     schedule = {}
@@ -338,11 +292,8 @@ def build_schedule(individuo, activities, resource_capacities):
     makespan = max(schedule[a]["end"] for a in schedule)
     return schedule, resource_usage, makespan
 
-
+# Plota diagrama de Gantt a partir de um dicionário {act_id: {start, end, duration}}.
 def plot_gantt(schedule, title="RCPSP - Gantt chart"):
-    """
-    Plota diagrama de Gantt a partir de um dicionário {act_id: {start, end, duration}}.
-    """
     # Ordena por início
     tasks = sorted(schedule.items(), key=lambda kv: kv[1]["start"])
     ids = [f"A{act_id}" for act_id, _ in tasks]
@@ -366,11 +317,8 @@ def plot_gantt(schedule, title="RCPSP - Gantt chart"):
     plt.tight_layout()
     plt.show()
 
-
+# Plota o uso de cada recurso ao longo do tempo comparando com a capacidade.
 def plot_resource_usage(resource_usage, resource_capacities, title="Resource usage over time"):
-    """
-    Plota o uso de cada recurso ao longo do tempo comparando com a capacidade.
-    """
     time = np.arange(len(resource_usage))
     usage = np.array(resource_usage)  # shape: (T, R)
 
@@ -390,9 +338,6 @@ def plot_resource_usage(resource_usage, resource_capacities, title="Resource usa
     plt.suptitle(title)
     plt.tight_layout()
     plt.show()
-
-
-
 
 # Exemplo de uso dentro do algoritmo
 def evolutionary_algorithm_rcpsp(file_name, pop_size=50, generations=100, prob_mut=0.1):
