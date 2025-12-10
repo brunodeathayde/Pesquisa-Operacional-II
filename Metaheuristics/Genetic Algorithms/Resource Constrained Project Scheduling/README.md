@@ -48,6 +48,16 @@ Este repositório contém os seguintes arquivos:
 - **Resources.png**: consumo dos recursos vs capacidade.  
 - **Console**: impressão do melhor makespan e evolução da população.
 
+## 📊 Resultados Gráficos
+
+Os resultados do algoritmo podem ser visualizados diretamente abaixo:
+
+### Diagrama de Gantt
+![Diagrama de Gantt](Gantt.png)
+
+### Uso dos Recursos
+![Uso dos Recursos](Resources.png)
+
 
 ## 📂 Estrutura do Código
 
