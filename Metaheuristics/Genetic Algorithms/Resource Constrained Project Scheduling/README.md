@@ -1,3 +1,47 @@
+# Algoritmo Evolucionário para RCPSP
+
+Este repositório contém uma implementação em Python de um **Algoritmo Genético** para resolver o **Problema de Programação de Projetos com Restrição de Recursos (RCPSP)**.  
+O RCPSP é um problema clássico de otimização em que atividades devem ser escalonadas respeitando precedências e capacidades limitadas de recursos, buscando minimizar o **makespan** (tempo total do projeto).
+
+---
+
+## 📂 Estrutura do Código
+
+O arquivo principal (`rcpsp.py`) contém:
+
+- **Leitura da instância**  
+  - `read_instance_rcpsp(file_name)`: lê uma instância em formato texto e retorna número de atividades, recursos, capacidades e dados das atividades.
+
+- **População inicial**  
+  - `genpop_rcpsp(pop_size, activities)`: gera uma população inicial de indivíduos (listas de atividades válidas).
+
+- **Avaliação de soluções**  
+  - `schedule_generation(individuo, activities, resource_capacities)`: gera cronograma e calcula o makespan.  
+  - `fitness_population(pop, activities, resource_capacities)`: avalia toda a população.  
+  - `fitness_offspring(individuo, activities, resource_capacities)`: avalia um único indivíduo.
+
+- **Operadores evolutivos**  
+  - `selection(pop_size, fitness)`: seleção por torneio.  
+  - `ppc_crossover(parent1, parent2, activities)`: crossover preservando precedência.  
+  - `mutation_swap(prob_mut, offspring, activities)`: mutação por troca, mantendo precedências.  
+  - `replacement(pop, fitness, offspring, fitness_off, activities, resource_capacities)`: substitui o pior indivíduo se o filho for melhor.
+
+- **Visualização**  
+  - `plot_gantt(schedule)`: plota diagrama de Gantt da solução.  
+  - `plot_resource_usage(resource_usage, resource_capacities)`: plota uso dos recursos ao longo do tempo.  
+
+- **Algoritmo principal**  
+  - `evolutionary_algorithm_rcpsp(file_name, pop_size=50, generations=100, prob_mut=0.1)`: executa o algoritmo completo.
+
+---
+
+## 📄 Formato da Instância
+
+O arquivo de instância deve seguir o padrão:
+
+
+
+
 # Explicação da Instância RCPSP
 
 Este repositório contém um exemplo de instância do **Problema de Programação de Projetos com Restrição de Recursos (RCPSP)**.
