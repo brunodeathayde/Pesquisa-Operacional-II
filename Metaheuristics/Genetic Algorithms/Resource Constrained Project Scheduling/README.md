@@ -4,6 +4,50 @@ Este repositório contém uma implementação em Python de um **Algoritmo Genét
 O RCPSP é um problema clássico de otimização em que atividades devem ser escalonadas respeitando precedências e capacidades limitadas de recursos, buscando minimizar o **makespan** (tempo total do projeto).
 
 ---
+## 📂 Estrutura do Repositório
+
+Este repositório contém os seguintes arquivos:
+
+- **Gantt.png**  
+  Diagrama de Gantt gerado pelo algoritmo, mostrando a programação das atividades ao longo do tempo.
+
+- **Resources.png**  
+  Gráfico de uso dos recursos comparando consumo e capacidade em cada período.
+
+- **RCPSP-1.txt**  
+  Arquivo de instância exemplo do problema RCPSP, contendo número de atividades, recursos, capacidades e precedências.
+
+- **README.md**  
+  Documento de descrição do projeto, instruções de uso e explicações sobre o algoritmo.
+
+- **instance_generator.py**  
+  Script para gerar instâncias RCPSP automaticamente em formato texto.
+
+- **main.py**  
+  Arquivo principal para execução do algoritmo evolucionário sobre uma instância RCPSP.
+
+- **rcpsp_operators.py**  
+  Implementação dos operadores evolucionários (seleção, crossover, mutação e substituição) utilizados no algoritmo.
+
+---
+
+## 🚀 Como usar
+
+1. Coloque sua instância RCPSP em formato `.txt` (exemplo: `RCPSP-1.txt`).  
+2. Execute o arquivo `main.py` para rodar o algoritmo evolucionário.  
+3. Os resultados incluem:  
+   - **Makespan** da melhor solução encontrada  
+   - **Diagrama de Gantt** (`Gantt.png`)  
+   - **Uso dos recursos** (`Resources.png`)  
+
+---
+
+## 📊 Saídas esperadas
+
+- **Gantt.png**: visualização das atividades ao longo do tempo.  
+- **Resources.png**: consumo dos recursos vs capacidade.  
+- **Console**: impressão do melhor makespan e evolução da população.
+
 
 ## 📂 Estrutura do Código
 
