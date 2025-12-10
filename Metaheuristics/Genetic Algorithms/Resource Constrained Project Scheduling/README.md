@@ -89,6 +89,75 @@ O arquivo principal (`rcpsp.py`) contém:
 
 ---
 
+# Operador de Cruzamento PPC (Precedence Preserving Crossover)
+
+Este documento descreve em detalhes o operador de cruzamento **PPC (Precedence Preserving Crossover)** implementado para o problema **RCPSP (Resource-Constrained Project Scheduling Problem)**.
+
+---
+
+## 📌 Objetivo
+
+O operador PPC tem como finalidade **gerar um novo indivíduo (filho)** a partir de dois pais (`parent1` e `parent2`), garantindo que todas as **restrições de precedência** entre atividades sejam respeitadas.  
+Dessa forma, o filho resultante é sempre uma **sequência válida de atividades**.
+
+---
+
+## ⚙️ Funcionamento
+
+1. **Inicialização**  
+   - Define o tamanho da lista de atividades (`n`).  
+   - Cria uma lista vazia `offspring` para armazenar o filho.  
+   - Cria um conjunto `used` para controlar quais atividades já foram inseridas.
+
+2. **Construção do filho**  
+   - Enquanto o filho não tiver todas as atividades (`len(offspring) < n`):  
+     - Seleciona **candidatos válidos** do `parent1`:  
+       - Atividades ainda não usadas.  
+       - Todos os predecessores já presentes no `offspring`.  
+     - Se não houver candidatos no `parent1`, tenta no `parent2`.  
+     - Se ainda assim não houver candidatos, lança erro (`RuntimeError`).
+
+3. **Escolha da atividade**  
+   - Alterna entre os pais para guiar a escolha:  
+     - Em posições pares → segue ordem do `parent1`.  
+     - Em posições ímpares → segue ordem do `parent2`.  
+   - A atividade escolhida é adicionada ao `offspring` e marcada como usada.
+
+4. **Finalização**  
+   - Após completar todas as posições, retorna o filho (`offspring`) como uma lista válida de atividades.
+
+---
+
+## 🧩 Exemplo Simplificado
+
+Suponha duas listas de atividades (pais):
+
+- `parent1 = [1, 2, 3, 4]`  
+- `parent2 = [2, 1, 4, 3]`  
+
+Com precedências:  
+- Atividade 2 depende da 1  
+- Atividade 3 depende da 2  
+
+O operador PPC irá construir o filho garantindo que:  
+- A atividade 1 apareça antes da 2  
+- A atividade 2 apareça antes da 3  
+- Nenhuma restrição seja violada  
+
+Resultado possível:  
+- `offspring = [1, 2, 4, 3]`
+
+---
+
+## ✅ Vantagens
+
+- **Preserva precedências**: nunca gera soluções inválidas.  
+- **Combina informações dos dois pais**: alterna entre eles para guiar a construção.  
+- **Flexível**: pode ser aplicado em qualquer instância RCPSP com diferentes números de atividades e precedências.
+
+
+
+
 ## 📄 Formato da Instância
 
 O arquivo de instância deve seguir o padrão:
