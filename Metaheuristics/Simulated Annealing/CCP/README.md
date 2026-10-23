@@ -87,8 +87,8 @@ O algoritmo particiona um conjunto de clientes em `p` clusters com capacidade li
 | Temperatura final | $T_f$ | 0.01 |
 | Fator de resfriamento | $\alpha$ | 0.95 |
 | Número máximo de iterações | — | 10000 |
-| Número de clientes | $n$ | 50 |
-| Número de clusters | $p$ | 5 |
+| Número de clientes | $n$ | 200 |
+| Número de clusters | $p$ | 10 |
 
 ---
 
